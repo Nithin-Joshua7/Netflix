@@ -9,9 +9,13 @@ const SignUpPage = () => {
 	const[username,setUsername] = useState("")
 	const[password,setPassword] = useState("")
 	const{signup} = useAuthStore()
-	const handleSignUp = (e)=>{
+	const handleSignUp = async (e)=>{
 		e.preventDefault()
-		signup({email,username,password})
+		const success = await signup({ email, username, password });
+		if (success) {
+		  navigate("/");
+		}
+
 		console.log(email,username,password)
 	}
 	return (

@@ -9,11 +9,15 @@ const LoginPage = () => {
 
 	const { login, isLoggingIn } = useAuthStore();
 
-	const handleLogin = (e) => {
-		e.preventDefault();
-		login({ email, password });
-	};
 
+	const handleLogin = async (e) => {
+		e.preventDefault();
+		const success = await login({ email, password });
+	
+		if (success) {
+		  navigate("/");
+		}
+	  };
 	return (
 		<div className='h-screen w-full hero-bg'>
 			<header className='max-w-6xl mx-auto flex items-center justify-between p-4'>
