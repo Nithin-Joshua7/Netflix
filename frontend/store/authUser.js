@@ -40,7 +40,7 @@ export const useAuthStore = create((set) => ({
 			toast.error(error.response.data.message || "Logout failed");
 		}
 	},
-	authCheck: async () => {
+	/*authCheck: async () => {
 		set({ isCheckingAuth: true });
 		try {
 			const response = await axios.get("/api/v1/auth/authCheck");
@@ -50,5 +50,5 @@ export const useAuthStore = create((set) => ({
 			set({ isCheckingAuth: false, user: null });
 			// toast.error(error.response.data.message || "An error occurred");
 		}
-	},
+	},*/
 }));
