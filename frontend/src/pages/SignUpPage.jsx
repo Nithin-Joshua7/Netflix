@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../../store/authUser";
-
+import { useNavigate } from "react-router-dom";
 const SignUpPage = () => {
+	const navigate = useNavigate();
 	const{searchParams} = new URL(document.location);
 	const emailValue = searchParams.get("email");
 	const[email,setEmail] = useState(emailValue || "")
