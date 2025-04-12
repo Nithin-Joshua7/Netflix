@@ -17,12 +17,8 @@ function Navbar() {
         </Link>
       </div>
 
-      {/* Center: Title */}
-      <div className='absolute left-1/2 transform -translate-x-1/2 z-0'>
-        <h1 className='text-white text-lg sm:text-xl font-semibold whitespace-nowrap'>
-          This is Home page
-        </h1>
-      </div>
+     
+     
 
       {/* Right: Logout Button (Desktop only) */}
       <div className='hidden sm:block z-50'>
@@ -33,14 +29,18 @@ function Navbar() {
           Logout
         </button>
       </div>
-
-      
+</header>
+       <div className="flex items-center justify-center h-screen bg-black">
+      <h1 className='text-white text-3xl sm:text-4xl font-semibold'>
+        This is Home Page
+      </h1>
+    </div>
 
       {/* Mobile Dropdown */}
       {isMobilemenuOpen && (
         <div className='w-full sm:hidden mt-4 z-40 bg-black border rounded border-gray-800 absolute top-full left-0'>
           <div className='flex flex-col gap-2 p-4'>
-            <h1 className='text-white text-base text-center'>This is Home Page</h1>
+
             <button
               onClick={logout}
               className='bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition'
@@ -50,7 +50,7 @@ function Navbar() {
           </div>
         </div>
       )}
-    </header>
+   
   );
 }
 
