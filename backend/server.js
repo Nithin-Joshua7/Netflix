@@ -19,7 +19,7 @@ app.use(cors({
 app.use("/api/v1/auth",authRoutes)
 
 
-app.listen( process.env.PORT || 4000,"localhost",()=>{
+app.listen( process.env.PORT || 4000,()=>{
     console.log("Server started running at http://localhost/4000")
     connectDb()
 })
