@@ -14,9 +14,11 @@ export const useAuthStore = create((set) => ({
 			const response = await axios.post("https://netflixb.onrender.com/api/v1/auth/signup", credentials,{ withCredentials: true });
 			set({ user: response.data.user, isSigningUp: false });
 			toast.success("Account created successfully");
+			return true
 		} catch (error) {
 			toast.error(error.response.data.message || "Signup failed");
 			set({ isSigningUp: false, user: null });
+			return false
 		}
 	},
 	login: async (credentials) => {
@@ -24,9 +26,11 @@ export const useAuthStore = create((set) => ({
 		try {
 			const response = await axios.post("https://netflixb.onrender.com/api/v1/auth/login", credentials,{ withCredentials: true });
 			set({ user: response.data.user, isLoggingIn: false });
+			return true
 		} catch (error) {
 			set({ isLoggingIn: false, user: null });
 			toast.error(error.response.data.message || "Login failed");
+			return false
 		}
 	},
 	logout: async () => {
